@@ -1,0 +1,9 @@
+---
+version: "2"
+prepare:
+  fetch:
+    - url: https://raw.githubusercontent.com/codeclimate/styleguide/master/javascript/eslintrc.base.js
+      path: .eslintrc.base.js
+plugins:
+  eslint:
+    enabled: true
