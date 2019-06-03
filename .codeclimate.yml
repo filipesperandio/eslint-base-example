@@ -1,8 +1,5 @@
 version: "2"
-checks:
-  method-lines:
-    config:
-      threshold: 50
+
 engines:
   eslint:
     enabled: true
@@ -16,11 +13,5 @@ engines:
         - .tsx
   duplication:
     enabled: false
-
-exclude_paths:
-  - .cache/*
-  - node_modules/*
-  - packages/node-service/*
-  - packages/client/node_modules/*
-  - packages/client/.cache/*
-  - packages/client/coverage/*
+  structure:
+    enabled: false
