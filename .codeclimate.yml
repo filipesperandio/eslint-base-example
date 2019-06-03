@@ -1,9 +1,26 @@
----
 version: "2"
-prepare:
-  fetch:
-    - url: https://raw.githubusercontent.com/codeclimate/styleguide/master/javascript/eslintrc.base.js
-      path: .eslintrc.base.js
-plugins:
+checks:
+  method-lines:
+    config:
+      threshold: 50
+engines:
   eslint:
     enabled: true
+    channel: eslint-5
+    config:
+      config: .eslintrc.js
+      extensions:
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
+  duplication:
+    enabled: false
+
+exclude_paths:
+  - .cache/*
+  - node_modules/*
+  - packages/node-service/*
+  - packages/client/node_modules/*
+  - packages/client/.cache/*
+  - packages/client/coverage/*
